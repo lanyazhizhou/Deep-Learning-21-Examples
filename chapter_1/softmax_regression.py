@@ -8,7 +8,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 # 创建x，x是一个占位符（placeholder），代表待识别的图片
-x = tf.placeholder(tf.float32, [None, 784])
+x = tf.placeholder(tf.float32, [None, 784])  #占位符不用提供初始值，而变量必须有，None表示一维特征可以是任意没有要求
 
 # W是Softmax模型的参数，将一个784维的输入转换为一个10维的输出
 # 在TensorFlow中，变量的参数用tf.Variable表示
