@@ -49,7 +49,7 @@ for _ in range(1000):
 
 # 正确的预测结果，tf.argmax(数组，维度），返回y的第一维中数最大的下标，因为y是独热显示的，下标正好是数字标签
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
-# 计算预测准确率，它们都是Tensor
+# 计算预测准确率，它们都是Tensor，tf.cast改变第一个参数correct_prediction的数据类型为float32
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 # 在Session中运行Tensor可以得到Tensor的值
 # 这里是获取最终模型的正确率
