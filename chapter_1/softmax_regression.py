@@ -10,7 +10,7 @@ mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 # 创建x，x是一个占位符（placeholder），代表待识别的图片
 x = tf.placeholder(tf.float32, [None, 784])  #占位符不用提供初始值，而变量必须有，None表示一维特征可以是任意没有要求
 
-# W是Softmax模型的参数，将一个784维的输入转换为一个10维的输出
+# W是Softmax模型的参数，将一个784维的输入转换为一个10维的输出，转化为10维的输出是因为标签使用独热来显示的，正好是10维而不是一维的标签
 # 在TensorFlow中，变量的参数用tf.Variable表示
 W = tf.Variable(tf.zeros([784, 10]))
 # b是又一个Softmax模型的参数，我们一般叫做“偏置项”（bias）。
