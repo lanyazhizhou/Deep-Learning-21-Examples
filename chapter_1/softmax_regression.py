@@ -47,7 +47,7 @@ for _ in range(1000):
     # 在Session中运行train_step，运行时要传入占位符的值
     sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
 
-# 正确的预测结果
+# 正确的预测结果，tf.argmax(数组，维度），返回y的第一维中数最大的下标，因为y是独热显示的，下标正好是数字标签
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
 # 计算预测准确率，它们都是Tensor
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
